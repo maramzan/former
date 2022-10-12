@@ -1,69 +1,114 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import Categories from "../components/Categories";
+import ImageCarousel from "../components/ImageCarousel";
+import Navbar from "../components/Navbar";
+import ProductSection from "../components/ProductSection";
+import styles from "../styles/Home.module.css";
+
+const data = [
+  {
+    title: "Pesticides",
+    image:
+      "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+    hoverImage:
+      "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+  },
+  {
+    title: "Fertilizers",
+    image:
+      "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+    hoverImage:
+      "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+  },
+  {
+    title: "Seeds",
+    image:
+      "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+    hoverImage:
+      "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+  },
+  {
+    title: "Hybrid Seeds",
+    image:
+      "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+    hoverImage:
+      "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+  },
+  {
+    title: "Spray Machinery",
+    image:
+      "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+    hoverImage:
+      "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+  },
+  {
+    title: "Kitchen Gardening",
+    image:
+      "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+    hoverImage:
+      "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+  },
+  {
+    title: "Tunnel Farming",
+    image:
+      "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+    hoverImage:
+      "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+  },
+  {
+    title: "Live Stock",
+    image:
+      "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+    hoverImage:
+      "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+  },
+  {
+    title: "Automation Irrigation",
+    image:
+      "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+    hoverImage:
+      "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+  },
+  {
+    title: "Household Products",
+    image:
+      "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+    hoverImage:
+      "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+  },
+  {
+    title: "Home Decore",
+    image:
+      "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+    hoverImage:
+      "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+  },
+  {
+    title: "Agriculture Tools",
+    image:
+      "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+    hoverImage:
+      "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+  },
+];
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
-  )
+    <>
+      <Navbar />
+      <ImageCarousel />
+      <ProductSection
+        sectionTitle="Flash Sale"
+        products={data}
+        bgColor={"#eadaeb"}
+      />
+      <Categories />
+      <ProductSection
+        sectionTitle="Seasonal Products"
+        products={data}
+        bgColor={"#d5d5ef"}
+      />
+    </>
+  );
 }
