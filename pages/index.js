@@ -4,7 +4,11 @@ import Categories from "../components/Categories";
 import ImageCarousel from "../components/ImageCarousel";
 import Navbar from "../components/Navbar";
 import ProductSection from "../components/ProductSection";
+import Sidebar from "../components/Sidebar";
 import styles from "../styles/Home.module.css";
+
+// MUI imports
+import { Grid } from "@mui/material";
 
 const data = [
   {
@@ -97,7 +101,18 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <ImageCarousel />
+      <Grid
+        container
+        sx={{
+          width: "90vw",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: 2,
+        }}
+      >
+        <Sidebar />
+        <ImageCarousel />
+      </Grid>
       <ProductSection
         sectionTitle="Flash Sale"
         products={data}

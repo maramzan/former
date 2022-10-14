@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import Head from "next/head";
 import React from "react";
 import Slider from "react-slick";
@@ -14,7 +15,12 @@ const ImageCarousel = () => {
   };
 
   return (
-    <div style={{ width: "90vw", margin: "auto" }}>
+    <Grid
+      item
+      xs={12}
+      md={9}
+      sx={{ overflow: "hidden", height: { xs: 250, md: 530 } }}
+    >
       <Head>
         <link
           rel="stylesheet"
@@ -31,24 +37,29 @@ const ImageCarousel = () => {
       <Slider {...settings}>
         <div>
           <img
-            src="https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2020/12/19/Pictures/_c890ad0e-417b-11eb-a3f2-c7d95fc89ddb.jpg"
-            style={{ width: "100%", height: 500 }}
+            src="https://scx2.b-cdn.net/gfx/news/2021/agriculture-1.jpg"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+              objectPosition: "center",
+            }}
           />
         </div>
         <div>
           <img
-            src="https://www.awsmfarming.co.uk/wp-content/uploads/2019/10/AWSM-Contract-Farming.jpg"
-            style={{ width: "100%", height: 500 }}
+            src="https://assets.weforum.org/community/image/K8IsUZHGGK2ewqWDTwvjx9GracZgnVRFjqc2R5_boXE.jpg"
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
           />
         </div>
         <div>
           <img
-            src="https://www.awsmfarming.co.uk/wp-content/uploads/2019/10/AWSM-Contract-Farming.jpg"
-            style={{ width: "100%", height: 500 }}
+            src="https://www.greenpeace.org/static/planet4-international-stateless/2021/10/49291478-pa110235-scaled.jpg"
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
           />
         </div>
       </Slider>
-    </div>
+    </Grid>
   );
 };
 

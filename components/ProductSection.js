@@ -11,7 +11,7 @@ const ProductSection = ({ sectionTitle, products, bgColor }) => {
     <Box
       sx={{
         marginTop: 5,
-        maxWidth: "90vw",
+        width: "90vw",
         marginLeft: "auto",
         marginRight: "auto",
       }}
