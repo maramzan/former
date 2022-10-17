@@ -9,6 +9,8 @@ import styles from "../styles/Home.module.css";
 
 // MUI imports
 import { Grid } from "@mui/material";
+import Features from "../components/Features";
+import Footer from "../components/Footer";
 
 const data = [
   {
@@ -124,6 +126,8 @@ export default function Home() {
         products={data}
         bgColor={"#d5d5ef"}
       />
+      <Features />
+      <Footer />
     </>
   );
 }
