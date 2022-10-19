@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 // MUI imports
 import {
@@ -17,38 +18,7 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-const sidebarData = [
-  {
-    title: "Pesticides",
-  },
-  {
-    title: "Fertilizers",
-  },
-  {
-    title: "Seeds",
-  },
-  {
-    title: "Hybrid Seeds",
-  },
-  {
-    title: "Spray Machinery",
-  },
-  {
-    title: "Kitchen Gardening",
-  },
-  {
-    title: "Tunnel Farming",
-  },
-  {
-    title: "Live Stock",
-  },
-  {
-    title: "Automation Irrigation",
-  },
-  {
-    title: "Other Products",
-  },
-];
+import { sidebarData } from "../assets/sidebarData";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
@@ -101,11 +71,13 @@ const Sidebar = () => {
             disablePadding
             sx={{ boxShadow: "0 0 7px rgba(0,0,0,0.1)" }}
           >
-            {sidebarData.map((item) => (
-              <ListItemButton>
-                <ListItemText primary={item.title} />
-                <KeyboardArrowRightIcon />
-              </ListItemButton>
+            {sidebarData.map((item, i) => (
+              <Link key={i} href={`/category/${item.title}`}>
+                <ListItemButton>
+                  <ListItemText primary={item.title} />
+                  <KeyboardArrowRightIcon />
+                </ListItemButton>
+              </Link>
             ))}
           </List>
         </Collapse>

@@ -29,8 +29,12 @@ const ProductSection = ({ sectionTitle, products, bgColor }) => {
           paddingBottom: 3,
         }}
       >
-        {products?.map((item) => (
-          <ProductCard image={item.image} hoverImage={item.hoverImage} />
+        {products?.map((item, i) => (
+          <ProductCard
+            key={i}
+            image={item.image}
+            hoverImage={item.hoverImage}
+          />
         ))}
       </Grid>
     </Box>

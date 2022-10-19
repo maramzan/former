@@ -81,8 +81,8 @@ const Footer = () => {
           <Typography marginBottom={2} sx={{ fontSize: 17, fontWeight: "500" }}>
             Information
           </Typography>
-          {information.map((item) => (
-            <Typography marginBottom={2} sx={{ fontSize: 14 }}>
+          {information.map((item, i) => (
+            <Typography key={i} marginBottom={2} sx={{ fontSize: 14 }}>
               {item.text}
             </Typography>
           ))}
@@ -91,8 +91,8 @@ const Footer = () => {
           <Typography marginBottom={2} sx={{ fontSize: 17, fontWeight: "500" }}>
             Other Info
           </Typography>
-          {otherInfo.map((item) => (
-            <Typography marginBottom={2} sx={{ fontSize: 14 }}>
+          {otherInfo.map((item, i) => (
+            <Typography key={i} marginBottom={2} sx={{ fontSize: 14 }}>
               {item.text}
             </Typography>
           ))}

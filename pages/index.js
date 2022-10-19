@@ -102,7 +102,6 @@ const data = [
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Grid
         container
         sx={{
