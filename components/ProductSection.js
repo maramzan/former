@@ -30,11 +30,9 @@ const ProductSection = ({ sectionTitle, products, bgColor }) => {
         }}
       >
         {products?.map((item, i) => (
-          <ProductCard
-            key={i}
-            image={item.image}
-            hoverImage={item.hoverImage}
-          />
+          <Grid key={i} item xs={6} sm={4} md={3} lg={2}>
+            <ProductCard image={item.image} hoverImage={item.hoverImage} />
+          </Grid>
         ))}
       </Grid>
     </Box>

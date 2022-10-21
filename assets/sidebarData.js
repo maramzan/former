@@ -1,6 +1,7 @@
 export const sidebarData = [
   {
     title: "Pesticides",
+    bgImage: "https://agronomie.info/fr/wp-content/uploads/2017/01/2.jpg",
     subCategory: [
       {
         title: "Fungicides",
@@ -8,6 +9,36 @@ export const sidebarData = [
           "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
         hoverImage:
           "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+        products: [
+          {
+            title: "Pesticides",
+            image:
+              "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+            hoverImage:
+              "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+          },
+          {
+            title: "Fertilizers",
+            image:
+              "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+            hoverImage:
+              "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+          },
+          {
+            title: "Seeds",
+            image:
+              "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+            hoverImage:
+              "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+          },
+          {
+            title: "Hybrid Seeds",
+            image:
+              "https://media.istockphoto.com/photos/manual-pesticide-sprayer-picture-id503140566?k=20&m=503140566&s=612x612&w=0&h=uivoSSc7bfmYJQasP_NM7P7qfWPFQvozR7oA_GYOdyg=",
+            hoverImage:
+              "https://c8.alamy.com/comp/GNE3HN/burkina-faso-bobo-dioulasso-market-booth-sale-of-pesticides-fertilizer-GNE3HN.jpg",
+          },
+        ],
       },
       {
         title: "Insecticides",
